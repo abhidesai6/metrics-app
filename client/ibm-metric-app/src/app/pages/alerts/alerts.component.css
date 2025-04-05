@@ -1,0 +1,47 @@
+.alerts-container {
+    padding: 1rem;
+  }
+  
+  .alert-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  
+  .alert-form label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .alerts-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .alerts-table th,
+  .alerts-table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .alerts-table th {
+    background-color: #f5f5f5;
+  }
+  
+  .active-alerts {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 6px;
+  }
+
+  .no-alerts {
+    background: #BDDDBF;
+    border: 1px solid #9DB89E;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 6px;
+  }
