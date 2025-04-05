@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 2s
+
+scrape_configs:
+  - job_name: "mock-metrics"
+    static_configs:
+      - targets: ["mock-exporter:9000"]
