@@ -1,0 +1,67 @@
+.welcome-wrapper {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .main-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-text {
+    color: #0f62fe; 
+  }
+  
+  .subheading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  
+  .metric-text {
+    font-weight: 600;
+    color: #3f3f46;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    background-color: #0f62fe;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0043ce;
+  }
+  
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #1f2937;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+  

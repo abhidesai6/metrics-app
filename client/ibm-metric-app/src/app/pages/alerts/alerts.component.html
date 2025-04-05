@@ -1,0 +1,86 @@
+<div class="alerts-container">
+    <h2 class="alerts-title">Thresholds</h2>
+  
+    <!-- Alert Form -->
+    <form (ngSubmit)="addOrUpdateAlert()" class="alert-form">
+      <select
+        [(ngModel)]="newAlert.metric"
+        name="metric"
+        required
+        class="form-input"
+      >
+        <option value="" disabled>Select Metric</option>
+        <option *ngFor="let metric of metrics" [value]="metric">
+          {{ metric }}
+        </option>
+      </select>
+  
+      <select
+        [(ngModel)]="newAlert.operator"
+        name="operator"
+        required
+        class="form-input"
+      >
+        <option *ngFor="let op of operatorOption" [value]="op.value">
+            {{ op.label }}
+        </option>
+      </select>
+  
+      <input
+        type="number"
+        [(ngModel)]="newAlert.threshold"
+        name="threshold"
+        required
+        class="form-input"
+        placeholder="Enter threshold"
+      />
+  
+      <button type="submit" class="form-button">
+        {{ editId ? 'Update Threshold' : 'Add Threshold' }}
+      </button>
+  
+      <button type="button" class="form-button cancel" *ngIf="editId" (click)="resetForm()">
+        Cancel
+      </button>
+    </form>
+  
+    <!-- Alerts Table -->
+    <table class="alerts-table">
+      <thead>
+        <tr>
+          <th>Metric Name</th>
+          <th>Operator</th>
+          <th>Threshold Value</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alert of alerts">
+          <td>{{ alert.metric }}</td>
+          <td>{{ alert.operator }}</td>
+          <td>{{ alert.threshold }}</td>
+          <td>
+            <button (click)="editAlert(alert)" class="edit-button">Edit</button>
+            <button (click)="deleteAlert(alert)" class="delete-button">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br/>
+    <div *ngIf="activeAlerts.length > 0" class="active-alerts">
+        <h3>⚠️ Active Alerts</h3>
+        <ul>
+          <li *ngFor="let alert of activeAlerts">
+            <strong>{{ alert.metric }}</strong>
+            is <em>{{ alert.operator }}</em> {{ alert.threshold }} →
+            current: <strong>{{ alert.current_value }}</strong>
+          </li>
+        </ul>
+    </div>
+      
+    <div *ngIf="activeAlerts.length === 0" class="no-alerts">
+      <p>No active alerts.</p>
+    </div>
+      
+  </div>
+  

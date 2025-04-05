@@ -1,0 +1,43 @@
+<div *ngIf="metricsData && metrics.length > 0; else loading">
+  <div class="metrics-grid">
+    <div class="metric-card" *ngFor="let metric of metrics">
+      <h3>{{ metric }}</h3>
+
+      <ng-container *ngIf="metricsData[metric]">
+        <p>
+          <strong>Value:</strong>
+          {{
+            metricsData[metric].value !== undefined
+              ? metricsData[metric].value
+              : "N/A"
+          }}
+        </p>
+
+        <p>
+          <strong>Last Updated:</strong>
+          {{
+            metricsData[metric].timestamp
+              ? (metricsData[metric].timestamp | date : "short")
+              : "N/A"
+          }}
+        </p>
+      </ng-container>
+
+      <ng-container *ngIf="!metricsData[metric]">
+        <p><strong>Value:</strong> Loading...</p>
+        <p><strong>Last Updated:</strong> --</p>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading metrics...</p>
+</ng-template>
+
+<div class="dashboard">
+  <div *ngFor="let metric of metrics" class="card">
+    <h3>{{ metric }}</h3>
+    <canvas [id]="metric + '-chart'" width="1000" height="500"></canvas>
+  </div>
+</div>
