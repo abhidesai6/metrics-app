@@ -50,3 +50,15 @@ chmod +x make.sh
 ```bash
 ./make.sh
 ```
+
+
+## Project snapshots
+
+#### Welcome page 
+![alt text](image.png)
+
+#### Dashboard 
+![alt text](image-1.png)
+
+#### Manage Alerts page 
+![alt text](image-2.png)
